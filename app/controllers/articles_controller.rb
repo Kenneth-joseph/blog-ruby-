@@ -22,6 +22,21 @@ class ArticlesController < ApplicationController
       render :new
     end
   end
+
+  # to help with edition of the articles we'll need to add two actions that will handle this process 
+  def edit
+    # we must first find the articles in the db using its parameters 
+    @article = Article.find(params[:id])
+  end
+
+  def update 
+    @article= Article.find(params[:id])
+    if @article.update(article_params)
+      redirect_to @article
+    else
+     render :edit
+    end
+  end
   # to prevent mulicious users from entering extra fields into the forms and overwriting private data, we'll use the rails feature strong parameters to help filter the params, before create uses the data from the user 
   private
   def article_params

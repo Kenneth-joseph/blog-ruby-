@@ -2,35 +2,7 @@
 <div class="header bg-info text-white text-center p-3"><h1>New Article</h1> </div>
 
 <div class="new text-center mt-5">
-<%= form_with model: @article do |form| %>
-  <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-    <%# including the error in the form  %>
-    <% @article.errors.full_messages_for(:title).each do |message| %>
-    <div><%= message %></div>
-    <%end%>
-  </div>
-
-  <div>
-    <%= form.label :author %><br>
-    <%= form.text_field :author %>
-    <% @article.errors.full_messages_for(:author).each do |message| %>
-    <div><%= message %></div>
-    <%end%>
-  </div>
-
-  <div> 
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-    <% @article.errors.full_messages_for(:body).each do |message| %>
-    <div><%= message %></div>
-    <%end%>
-  </div>
-  <div class="mt-2">
-    <%= form.submit %>
-  </div>
-<% end %>
+<%= render "form", article: @article %>
 </div>
 <%# note %>
-<%# the full_messages_for method returns a user friendly array of message if specified else returns empty %>
+<%# the full_messages_for method returns a user friendly array of message if specified,  else returns empty %>
