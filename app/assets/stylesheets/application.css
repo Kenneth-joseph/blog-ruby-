@@ -19,8 +19,17 @@
  }
 
  ul .card{
-     list-style: none;
-     text-decoration: none;
      padding: 10px;
      margin: 10px;
+ }
+
+ ul li a:link{
+    text-decoration: none;
+ }
+ ul li a{
+     color: black;
+ }
+ .card{
+     margin: 0 auto;
+     text-align: center;
  }

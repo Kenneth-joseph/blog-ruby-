@@ -3,10 +3,11 @@
 
 <%# this method does a each loop to map through the articles and give back the expected results.  %>
  <%#<%evalutes whats enclosed in the ruby code. %> <%#<%= evalutes whats enclosed in the ruby code but gives back the results obtained %>
-<ul class=" text-center">
+<ul class="text-center">
 <% @articles.each do |article| %>  
 <li class="card">
-<%=article.title%>
+<%=link_to article.title, article%>
+</a>
 </li>
 <% end %>
 

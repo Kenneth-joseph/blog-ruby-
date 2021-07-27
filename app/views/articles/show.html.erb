@@ -1,10 +1,12 @@
 <div class="header bg-info text-white text-center"><h1>article</h1> </div>
+
+
 <div class="container text-center mt-5">
 <div class="card">
 <div class="card-title"> <h2><%= @article.title%><h2></div>
 <div class="card-body"> <p><%= @article.body%><p></div>
 <p class="text-muted"><%= @article.author%><p>
-<button class="btn small-btn bg-info text-white mr-auto">click me</button>
+<button class="btn small-btn bg-info text-white mr-auto" href="<%= articles_path()%>">Back</button>
 </div>
 
 </div>
