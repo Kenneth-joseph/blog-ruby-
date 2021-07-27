@@ -6,7 +6,8 @@
 <div class="card-title"> <h2><%= @article.title%><h2></div>
 <div class="card-body"> <p><%= @article.body%><p></div>
 <p class="text-muted"><%= @article.author%><p>
-<button class="btn small-btn bg-info text-white mr-auto" href="<%= articles_path()%>">Back</button>
+<%# <button class="btn small-btn bg-info text-white mr-auto"  %>
+<button class="btn small-btn bg-info text-white"><%=link_to "Articles",articles_path()%></button>
 </div>
 
 </div>

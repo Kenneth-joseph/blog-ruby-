@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
   end
   # saves the newly created articles into the db, else redirect to the creation page(new)
   def create
-    @article = Article.new(title: "...", body:"...", author: "...")
+    @article = Article.new(article_params)
      
     if  @article.save
       redirect_to @article
