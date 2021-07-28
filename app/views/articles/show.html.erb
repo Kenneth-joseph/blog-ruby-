@@ -8,8 +8,8 @@
 <p class="text-muted"><%= @article.author%><p>
 <%# <button class="btn small-btn bg-info text-white mr-auto"  %>
 <div class="click">
-<button class="btn small-btn bg-dark text-white"><%= link_to "Edit", edit_article_path(@article) %></button>
-<button class="btn small-btn bg-dark text-white"><%=link_to "Delete",article_path(@article), method: :delete, data: { confirm: "Are you sure?"}%></button>
+<button class="btn small-btn bg-info text-white "><%= link_to "Edit", edit_article_path(@article) %></button>
+<button class="btn small-btn bg-danger text-white"><%=link_to "Delete",article_path(@article), method: :delete, data: { confirm: "Are you sure?", :style=>'color:#fff;',:class => "css_class"}%></button>
 <%# the method.delete options makes the link to make Delete request and the confirm option raises a dailog box to acknowledge the certainity of your action %>
 </div>
 </div>

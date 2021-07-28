@@ -33,3 +33,11 @@
      margin: 0 auto;
      text-align: center;
  }
+
+ .card .click{
+    display: flex;
+    justify-content: flex-end;
+ }
+ .card .click button{
+     margin: 5px;
+ }
