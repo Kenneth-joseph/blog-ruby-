@@ -37,6 +37,14 @@ class ArticlesController < ApplicationController
      render :edit
     end
   end
+
+  # adding the delete action that will help delete the aticles 
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+
+    redirect_to articles_path
+  end
   # to prevent mulicious users from entering extra fields into the forms and overwriting private data, we'll use the rails feature strong parameters to help filter the params, before create uses the data from the user 
   private
   def article_params

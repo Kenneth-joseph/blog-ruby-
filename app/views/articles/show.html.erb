@@ -7,7 +7,11 @@
 <div class="card-body"> <p><%= @article.body%><p></div>
 <p class="text-muted"><%= @article.author%><p>
 <%# <button class="btn small-btn bg-info text-white mr-auto"  %>
-<button class="btn small-btn bg-info text-white"><%=link_to "Articles",articles_path()%></button>
+<div class="click">
+<button class="btn small-btn bg-dark text-white"><%= link_to "Edit", edit_article_path(@article) %></button>
+<button class="btn small-btn bg-dark text-white"><%=link_to "Delete",article_path(@article), method: :delete, data: { confirm: "Are you sure?"}%></button>
+<%# the method.delete options makes the link to make Delete request and the confirm option raises a dailog box to acknowledge the certainity of your action %>
 </div>
-<%= link_to "Edit", edit_article_path(@article) %>
+</div>
+<button class="btn small-btn bg-info text-white mt-3"><%=link_to "Articles",articles_path()%></button>
 </div>
