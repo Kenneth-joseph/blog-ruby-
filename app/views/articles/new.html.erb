@@ -3,6 +3,8 @@
 
 <div class="new text-center mt-5">
 <%= render "form", article: @article %>
+<button class="btn small-btn bg-info text-white mt-3"><%=link_to "Back",articles_path(), {:style=>'color:#FFFFFF; text-decoration:none', :class => "css_class"}%></button>
 </div>
+
 <%# note %>
 <%# the full_messages_for method returns a user friendly array of message if specified,  else returns empty %>
