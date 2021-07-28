@@ -3,15 +3,17 @@
 
 <%# this method does a each loop to map through the articles and give back the expected results.  %>
  <%#<%evalutes whats enclosed in the ruby code. %> <%#<%= evalutes whats enclosed in the ruby code but gives back the results obtained %>
+<div class="container">
 <ul class="text-center">
 <% @articles.each do |article| %>  
 <li class="card">
 <%=link_to article.title, article%>
 </a>
+<%= article.body%>
 </li>
 <% end %>
-
 </ul>
+</div>
 <%# links to the creation of a new article   %>
 <div class="text-center one">
 <button class="btn small-btn bg-info text-white "><%= link_to "New Article",new_article_path,{:style=>'color:#FFFFFF; text-decoration:none', :class => "css_class"} %></button>
