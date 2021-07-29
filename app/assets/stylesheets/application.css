@@ -43,4 +43,16 @@
  .card .click button{
      margin: 5px;
  }
+.comment h5{
+    margin-top: 5px;
+}
+.comment h6{
+    padding-top:20px;
+}
+.comment{
+    text-align: start;  
+}
 
+.comment h6{
+    text-decoration: red;
+}

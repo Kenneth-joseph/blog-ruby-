@@ -6,12 +6,40 @@
 <div class="card-title"> <h2><%= @article.title%><h2></div>
 <div class="card-body"> <p><%= @article.body%><p></div>
 <p class="text-muted"><%= @article.author%><p>
-<%# <button class="btn small-btn bg-info text-white mr-auto"  %>
+
 <div class="click">
 <button class="btn small-btn bg-info text-white "><%= link_to "Edit", edit_article_path(@article),{:style=>'color:#FFFFFF; text-decoration:none', :class => "css_class"} %></button>
 <button class="btn small-btn bg-danger text-white"><%=link_to "Delete",article_path(@article), method: :delete, data: { confirm: "Are you sure?", :style=>'color:#FFFFFF; text-decoration:none'} %></button>
 <%# the method.delete options makes the link to make Delete request and the confirm option raises a dailog box to acknowledge the certainity of your action %>
 </div>
 </div>
+
+<%# adding a comment  %>
+<div class="comment"> 
+<h5>comments </h5>
+<%# view the added comments here  %>
+<% @article.comments.each do |comment|%>
+<div class="show_comment">
+<h6><%= comment.commenter%></h6>
+<p style="color:grey;font-size:13px; background-color:#f3eeee; padding:5px;"><%= comment.body%></p>
+</div>
+<%end%>
+<%= form_with model: [@article, @article.comments.build ] do |form|%>
+<%# note: understand the array  above %>
+<h6>Add comment </h6>
+<div>
+<%= form.label :commenter ,{:class=>"text-muted"} %><br>
+<%= form.text_field :commenter %>
+</div>
+<div>
+<%= form.label :body ,{:class=>"text-muted"} %><br>
+<%= form.text_field :body%>
+</div>
+<div class="mt-2" >
+ <%= form.submit %>
+</div>
+<%end%>
+</div>
+<div>
 <button class="btn small-btn bg-info text-white mt-3"><%=link_to "Articles",articles_path(), {:style=>'color:#FFFFFF; text-decoration:none', :class => "css_class"}%></button>
 </div>
