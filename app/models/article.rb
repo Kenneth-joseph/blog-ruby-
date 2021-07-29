@@ -5,5 +5,11 @@ class Article < ApplicationRecord
     validates :title, presence: true
     validates :author, presence: true, length: {minimum: 5}
     validates :body, presence: true, length: {minimum: 20}
-
+    # implementing the the concerns through status 
+    VALID_STATUSES  =  ['public','private','archived']
+    validates :status, inclusion: {in: VALID_STATUSES}
+    # defining a status function that's going to use the above statuses
+    def archived?
+        status == 'archived'
+    end
 end

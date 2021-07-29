@@ -5,7 +5,7 @@
 
 
 <div class="container text-center mt-5">
-<div class="card">
+<div class="card p-2">
 <div class="card-title"> <h2><%= @article.title%><h2></div>
 <div class="card-body"> <p><%= @article.body%><p></div>
 <p class="text-muted"><%= @article.author%><p>
@@ -13,6 +13,7 @@
 <div class="click">
 <button class="btn small-btn bg-info text-white "><%= link_to "Edit", edit_article_path(@article),{:style=>'color:#FFFFFF; text-decoration:none', :class => "css_class"} %></button>
 <button class="btn small-btn bg-danger text-white"><%=link_to "Delete",article_path(@article), method: :delete, data: { confirm: "Are you sure?", :style=>'color:#FFFFFF; text-decoration:none'} %></button>
+<%# <a href="#"><i class="fas fa-trash-alt"> </i></a> %>
 <%# the method.delete options makes the link to make Delete request and the confirm option raises a dailog box to acknowledge the certainity of your action %>
 </div>
 </div>
