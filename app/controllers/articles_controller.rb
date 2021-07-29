@@ -48,6 +48,6 @@ class ArticlesController < ApplicationController
   # to prevent mulicious users from entering extra fields into the forms and overwriting private data, we'll use the rails feature strong parameters to help filter the params, before create uses the data from the user 
   private
   def article_params
-    params.require(:article).permit(:title, :body, :author)
+    params.require(:article).permit(:title, :body, :author, :status)
   end
 end
