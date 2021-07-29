@@ -1,4 +1,7 @@
-<div class="header bg-info text-white text-center"><h1>article</h1> </div>
+<div class="header bg-info text-white text-center">
+
+<h1>article</h1>
+</div>
 
 
 <div class="container text-center mt-5">
@@ -17,29 +20,15 @@
 <%# adding a comment  %>
 <div class="comment"> 
 <h5>comments </h5>
-<%# view the added comments here  %>
-<% @article.comments.each do |comment|%>
-<div class="show_comment">
-<h6><%= comment.commenter%></h6>
-<p style="color:grey;font-size:13px; background-color:#f3eeee; padding:5px;"><%= comment.body%></p>
-</div>
-<%end%>
-<%= form_with model: [@article, @article.comments.build ] do |form|%>
-<%# note: understand the array  above %>
-<h6>Add comment </h6>
-<div>
-<%= form.label :commenter ,{:class=>"text-muted"} %><br>
-<%= form.text_field :commenter %>
-</div>
-<div>
-<%= form.label :body ,{:class=>"text-muted"} %><br>
-<%= form.text_field :body%>
-</div>
-<div class="mt-2" >
- <%= form.submit %>
-</div>
-<%end%>
+<%# view the added comments here, reffering to the partial (_comment.html.erb in the comment view folder)%>
+<%= render @article.comments %>
+<%# form adding section %>
+<%=render 'comments/form'%>
+<%# jform adding section ends here  %>
 </div>
 <div>
 <button class="btn small-btn bg-info text-white mt-3"><%=link_to "Articles",articles_path(), {:style=>'color:#FFFFFF; text-decoration:none', :class => "css_class"}%></button>
 </div>
+
+
+<%# this template is getting clustered with lots of code, so using partials and make it more cleaner  %>

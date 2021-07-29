@@ -1,0 +1,16 @@
+
+<%= form_with model: [@article, @article.comments.build ] do |form|%>
+<%# note: understand the array  above %>
+<h6>Add comment </h6>
+<div>
+<%= form.label :commenter ,{:class=>"text-muted"} %><br>
+<%= form.text_field :commenter %>
+</div>
+<div>
+<%= form.label :body ,{:class=>"text-muted"} %><br>
+<%= form.text_field :body%>
+</div>
+<div class="mt-2" >
+ <%= form.submit %>
+</div>
+<%end%>
