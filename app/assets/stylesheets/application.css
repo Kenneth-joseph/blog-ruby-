@@ -30,7 +30,7 @@
      font-weight: 500;
      text-transform: uppercase;
  }
- .card{
+ #card-article{
      margin: 0 auto;
      text-align: center;
  }
@@ -52,6 +52,6 @@
     text-align: start;  
 }
 
-.comment h6{
-    text-decoration: red;
+.show_comment{
+    background-color:#f3eeee;
 }
