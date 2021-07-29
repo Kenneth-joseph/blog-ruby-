@@ -9,6 +9,13 @@ module Visibility
     # defining a status function that's going to use the above statuses
     validates :status, inclusion: {in: VALID_STATUSES}
     end
+    # adding a class method to help with the counting
+    class_methods do
+        def public_count
+            where(status:'public').count
+        end
+    end
+   
 
     def archived?
         status == 'archived'
