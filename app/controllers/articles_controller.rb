@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+  #adding the https authentication to prevent users from accessing the controller actions unless authenticated
+  http_basic_authenticate_with name: "kent", password: "123", except: [:index, :show]
+
   def index
     @articles= Article.all
   end

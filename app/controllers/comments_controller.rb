@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+    #adding the https authentication to prevent users from accessing the controller actions unless authenticated
+    http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
 
     # a create method action
     def create
