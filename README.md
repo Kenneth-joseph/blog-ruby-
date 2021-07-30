@@ -21,4 +21,10 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+### For Authentication
+**Username** : _kent_
+
+**Password** : _123_
+### To View the Application
+[blog Application](https://limitless-savannah-58983.herokuapp.com/articles)
+
